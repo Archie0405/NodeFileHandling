@@ -21,11 +21,15 @@ router1.post('/registration', (req, res)=>{
   req.body.sumbit
   res.render('Welcomepage',{firstname:fn})
 
-   var sample = req.body.firstname
+   var fname = req.body.firstname
+   var lname = req.body.lastname
+   var email = req.body.email
+   var add = req.body.address
+   var add2 = req.body.address2
     
     console.log(req.body.firstname)
 
-    file.writeFile('newdata', sample, function(err) {
+    file.writeFile('newdata', fname + " " + lname + " " + email + " " + add + " " + add2 , function(err) {
 
         if(err) throw err;
         console.log('saved');
