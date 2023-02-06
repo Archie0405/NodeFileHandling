@@ -18,14 +18,16 @@ main.use('/info', userRouter)
 main.get('/data', (req, res)=>{
 
     
-    var buf = Buffer.from(req.body.firstnanme);
+    var sample = req.body.firstname
     
+    console.log(req.body.firstname)
 
-    file.appendFile('shared/data.txt', buf, function(err) {
+    file.writeFile('newdata', sample +" Hi ", function(err) {
 
         if(err) throw err;
         console.log('saved');
         res.end();
+
     })
 })
 
